@@ -51,7 +51,7 @@
             <div class="card-body">
               <h5 class="card-title text-decoration-underline">Local Weather Report</h5>
               <div class="d-flex">
-                <img src="img/Forecast/sun.png">
+                <img src="img/Forecast/sun.png" id="weatherimg">
                 <h5 class="card-title day ms-5" id="day">sunday</h5>
               </div>
               <h6 class="card-subtitle mb-2 float-end me-5 text-white" id="weather">sunny</h6>
@@ -106,10 +106,11 @@
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        var weatherInfo = {day1:'sunday',weather1:'sunny',deg:'22°c',
-        day2:'monday',weather2:'sunCloud',day3:'tuesday',weather3:'cloudy',
-        day4:'wednesday',weather4:'rain',day5:'thursday',weather5:'RainThunder',
-        day6:'friday',weather6:'snow'};
+        var weatherInfo = {day1:'sunday',weather1:'sunny',deg:'22°c',sunny:"img/Forecast/sun.png",
+        day2:'monday',weather2:'sunCloud',sunCloud:'img/Forecast/SunCloud.png',day3:'tuesday',weather3:'cloudy',
+        cloudy:'img/Forecast/Cloud.png',
+        day4:'wednesday',weather4:'rain',rain:'img/Forecast/rain.png',day5:'thursday',weather5:'RainThunder',
+        RainThunder:'img/Forecast/RainThunder.png',day6:'friday',weather6:'snow',snow:'img/Forecast/Snow.png'};
 
         function weatherChange(index,day,weather){
             var dayWeek = document.getElementById("dayWeek");
@@ -118,30 +119,40 @@
             var day = document.getElementById("day");
             var weather = document.getElementById("weather");
             var deg = document.getElementById("deg");
+            var weatherimg = document.getElementById("weatherimg");
 
             if (index == "6"){
                 day.innerHTML=weatherInfo.day6;
                 weather.innerHTML=weatherInfo.weather6;
+                weatherimg.src = weatherInfo.snow;
             }
             if (index == "5"){
                 day.innerHTML=weatherInfo.day5;
                 weather.innerHTML=weatherInfo.weather5;
+                weatherimg.src = weatherInfo.RainThunder;
             }
             if (index == "4"){
                 day.innerHTML=weatherInfo.day4;
                 weather.innerHTML=weatherInfo.weather4;
+                weatherimg.src = weatherInfo.rain;
+
             }
             if (index == "3"){
                 day.innerHTML=weatherInfo.day3;
                 weather.innerHTML=weatherInfo.weather3;
+                weatherimg.src = weatherInfo.cloudy;
             }
             if (index == "2"){
                 day.innerHTML=weatherInfo.day2;
                 weather.innerHTML=weatherInfo.weather2;
+                weatherimg.src = weatherInfo.sunCloud;
+
             }
             if (index == "1"){
                 day.innerHTML=weatherInfo.day1;
                 weather.innerHTML=weatherInfo.weather1;
+                weatherimg.src = weatherInfo.sunny;
+
             }
 
             
