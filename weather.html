@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+    <script src="css/bootstrap-5.3.2-dist/js/bootstrap.js"></script>
+   
+    <title>Document</title>
+    <style>
+        body{
+            background-image: linear-gradient(to right, #77A1D3 0%, #79CBCA  51%, #77A1D3  100%);        }
+        .container,.col{
+            /* margin-top: ; */
+            height: 300px;
+        }
+        .card-title{
+            color: white;
+            text-transform: uppercase;
+            text-align: center;
+        }
+        .container{
+            box-shadow: rgba(0, 0, 0, 0.35) 0 5px 15px;
+            background-color:rgb(69, 108, 121) ;
+            border-radius: 10px;
+
+        }
+        .flex{
+            margin-left: auto;
+            margin-right: auto;
+            justify-content: center;
+        }
+        .weather-img{
+            margin-left: 24%;
+            margin-top: 30%;
+        }
+        .day{
+            margin-top: 10%;
+        }
+        .card,.col,.container{
+            background-color: #5298b1;
+        }
+        .col{
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="d-flex flex">
+        <div class="card border-0 m-4" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title text-decoration-underline">Local Weather Report</h5>
+              <div class="d-flex">
+                <img src="img/Forecast/sun.png">
+                <h5 class="card-title day ms-5" id="day">sunday</h5>
+              </div>
+              <h6 class="card-subtitle mb-2 float-end me-5 text-white" id="weather">sunny</h6>
+              <p class="text-end pt-2 fs-3 text-white" id="deg">22°c</p>
+
+            </div>
+          </div>
+          <div class="card border-0 m-4" style="width: 18rem;">
+            <div class="card-body">
+              <h5 class="card-title">Card title</h5>
+              <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+              <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+              <a href="#" class="card-link">Card link</a>
+              <a href="#" class="card-link">Another link</a>
+            </div>
+          </div>
+    </div>
+    
+    <div class="container mt-5 border-0">
+        
+        <div class="row align-items-start">
+          <div class="col border-end p-3" onclick="weatherChange('2','monday','sunCloud')">
+            <h5 class="card-title day" id="dayWeek">monday</h5>
+            <img src="img/Forecast/SunCloud.png" class="weather-img">
+            <p class="text-center pt-2 fs-3 text-white" id="dayDeg">22°c</p>
+          </div>
+          <div class="col border-end p-3" onclick="weatherChange('3','tuesday','cloudy')">
+            <h5 class="card-title day" id="dayWeek">tuesday</h5>
+            <img src="img/Forecast/Cloud.png" class="weather-img">
+            <p class="text-center pt-2 fs-3 text-white">22°c</p>
+
+          </div>
+          <div class="col border-end p-3" onclick="weatherChange('4','wednesday','rain')">
+            <h5 class="card-title day" id="dayWeek">wednesday</h5>
+            <img src="img/Forecast/rain.png" class="weather-img">
+            <p class="text-center pt-2 fs-3 text-white">22°c</p>
+          </div>
+          <div class="col border-end p-3" onclick="weatherChange('5','thursday','RainThunder')">
+            <h5 class="card-title day" id="dayWeek">thursday</h5>
+            <img src="img/Forecast/RainThunder.png" class="weather-img">
+            <p class="text-center pt-2 fs-3 text-white">22°c</p>
+
+          </div>
+          <div class="col border-end p-3" onclick="weatherChange('6','friday','snow')">
+            <h5 class="card-title day" id="dayWeek">friday</h5>
+            <img src="img/Forecast/Snow.png" class="weather-img">
+            <p class="text-center pt-2 fs-3 text-white">22°c</p>
+
+          </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        var weatherInfo = {day1:'sunday',weather1:'sunny',deg:'22°c',
+        day2:'monday',weather2:'sunCloud',day3:'tuesday',weather3:'cloudy',
+        day4:'wednesday',weather4:'rain',day5:'thursday',weather5:'RainThunder',
+        day6:'friday',weather6:'snow'};
+
+        function weatherChange(index,day,weather){
+            var dayWeek = document.getElementById("dayWeek");
+            var dayDeg = document.getElementById("dayDeg");
+
+            var day = document.getElementById("day");
+            var weather = document.getElementById("weather");
+            var deg = document.getElementById("deg");
+
+            if (index == "6"){
+                day.innerHTML=weatherInfo.day6;
+                weather.innerHTML=weatherInfo.weather6;
+            }
+            if (index == "5"){
+                day.innerHTML=weatherInfo.day5;
+                weather.innerHTML=weatherInfo.weather5;
+            }
+            if (index == "4"){
+                day.innerHTML=weatherInfo.day4;
+                weather.innerHTML=weatherInfo.weather4;
+            }
+            if (index == "3"){
+                day.innerHTML=weatherInfo.day3;
+                weather.innerHTML=weatherInfo.weather3;
+            }
+            if (index == "2"){
+                day.innerHTML=weatherInfo.day2;
+                weather.innerHTML=weatherInfo.weather2;
+            }
+            if (index == "1"){
+                day.innerHTML=weatherInfo.day1;
+                weather.innerHTML=weatherInfo.weather1;
+            }
+
+            
+        }
+
+
+
+    </script>
+</body>
+</html>
